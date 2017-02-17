@@ -19,6 +19,10 @@ void draw() {
   //sun
   Sun draw_sun = new Sun(100, 100);
   draw_sun.display();
+  
+  //moon
+  Moon draw_moon = new Moon(300, 300);
+  draw_moon.display();
 
   //island
   fill(120, 66, 18); //dark brown
