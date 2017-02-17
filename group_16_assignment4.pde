@@ -17,14 +17,8 @@ void draw() {
   rect(0, 0, 800, 500);
 
   //sun
-  fill(245, 176, 65); //yellow
-  stroke(245, 176, 65);
-  ellipse(100, 100, 100, 100);
-  strokeWeight(8);
-  line(100, 20, 100, 180);
-  line(20, 100, 180, 100);
-  line(40, 40, 160, 160);
-  line(40, 160, 160, 40);
+  Sun draw_sun = new Sun(100, 100);
+  draw_sun.display();
 
   //island
   fill(120, 66, 18); //dark brown
