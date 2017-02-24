@@ -1,17 +1,17 @@
 public class Moon implements Celestial_Bodies {
   public Point origin;
-  float x, y;
+  float xpos, ypos, speed;
   color c;
 
-  public Moon(float _x, float _y) {
-    x = _x;
-    y = _y;
+  public Moon() {
+    //x = _x;
+    //y = _y;
   }
   
   void display() {
     fill(getColor());
     stroke(getColor());
-    ellipse(x, y, 70, 70);
+    //ellipse(x, y, 70, 70);
     strokeWeight(2);
   }
   

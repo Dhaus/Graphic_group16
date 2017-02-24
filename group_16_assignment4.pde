@@ -1,28 +1,36 @@
+Sun the_sun;
+//Moon the_moon;
 void setup() { 
   noFill();
   size(800, 800);
+  the_sun = new Sun();
+  //the_moon = new Moon();
 }
 
 //comment
 
 void draw() {
-  //water
-  fill(31, 97, 141); //dark blue
-  noStroke();
-  rect(0, 500, 800, 300);
-
   //sky
   fill(212, 230, 241); //light blue
   noStroke();
   rect(0, 0, 800, 500);
-
-  //sun
-  Sun draw_sun = new Sun(100, 100);
-  draw_sun.display();
+  //sun 
+  the_sun.display();
+  the_sun.move();
+  backdrop();
+  
   
   //moon
-  Moon draw_moon = new Moon(300, 300);
-  draw_moon.display();
+  //Moon draw_moon = new Moon(300, 300);
+  //draw_moon.display();
+  
+}
+
+public void backdrop() {
+  //water
+  fill(31, 97, 141); //dark blue
+  noStroke();
+  rect(0, 500, 800, 300);
 
   //island
   fill(120, 66, 18); //dark brown
@@ -47,5 +55,4 @@ void draw() {
   bezier(550, 280, 550, 250, 620, 240, 640, 260);
   bezier(550, 280, 550, 250, 640, 300, 635, 310);
 
-  
 }
