@@ -4,8 +4,8 @@ public class Moon implements Celestial_Bodies {
   color c;
 
   public Moon() {
-    xpos = 400;
-    ypos = 0;
+    xpos = 800;
+    ypos = 400;
     c = getColor();
     theta = 0.0;
   }
@@ -13,14 +13,14 @@ public class Moon implements Celestial_Bodies {
   void display() {
     fill(getColor());
     stroke(getColor());
-    ellipse(xpos, ypos, 70, 70);
+    ellipse(xpos, ypos, 100, 100);
     strokeWeight(2);
   }
   
   public void move() {
-      theta += 0.0021;
-      xpos = xpos + cos(theta);
-      ypos = ypos + sin(theta);
+      theta += 0.00235;
+      xpos = xpos - sin(theta);
+      ypos = ypos + cos(theta);
   }
   
   

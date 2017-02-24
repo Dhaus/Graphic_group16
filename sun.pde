@@ -4,8 +4,8 @@ public class Sun implements Celestial_Bodies {
   color c;
 
   public Sun() {
-    xpos = 400;
-    ypos = 0;
+    xpos = 0;
+    ypos = 400;
     c = getColor();
     theta = 0.0;
   }
@@ -19,14 +19,14 @@ public class Sun implements Celestial_Bodies {
     line(xpos - 80, ypos, xpos + 80, ypos);
     line(xpos - 60, ypos - 60, xpos + 60, ypos + 60);
     line(xpos - 60, ypos + 60, xpos + 60, ypos - 60);
-    move();
+    //move();
   }
   
   //updates the x, y values and adjusts bightness of the scene
   public void move() {
-      theta += 0.0021;
-      xpos = xpos + cos(theta);
-      ypos = ypos + sin(theta);
+      theta += 0.00235;
+      xpos = xpos + sin(theta);
+      ypos = ypos - cos(theta);
   }
   
   @Override
