@@ -1,10 +1,10 @@
 Sun the_sun;
-//Moon the_moon;
+Moon the_moon;
 void setup() { 
   noFill();
   size(800, 800);
   the_sun = new Sun();
-  //the_moon = new Moon();
+  the_moon = new Moon();
 }
 
 //comment
@@ -17,12 +17,10 @@ void draw() {
   //sun 
   the_sun.display();
   the_sun.move();
+  the_moon.display();
+  the_moon.move();
   backdrop();
   
-  
-  //moon
-  //Moon draw_moon = new Moon(300, 300);
-  //draw_moon.display();
   
 }
 

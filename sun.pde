@@ -7,7 +7,6 @@ public class Sun implements Celestial_Bodies {
     xpos = 400;
     ypos = 0;
     c = getColor();
-    speed = 4;
     theta = 0.0;
   }
   
@@ -28,7 +27,6 @@ public class Sun implements Celestial_Bodies {
       theta += 0.0021;
       xpos = xpos + cos(theta);
       ypos = ypos + sin(theta);
-      tint(0, 153, 204, 126);
   }
   
   @Override
