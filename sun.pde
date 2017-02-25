@@ -1,5 +1,4 @@
 public class Sun implements Celestial_Bodies {
-  public Point origin;
   float xpos, ypos, speed, theta;
   color c;
 

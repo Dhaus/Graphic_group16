@@ -1,5 +1,4 @@
 public class Star implements Celestial_Bodies {
-  public Point origin;
   float s, theta, xpos, ypos;
   int num;
   color c;

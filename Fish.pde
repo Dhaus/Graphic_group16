@@ -1,5 +1,4 @@
 public class Fish implements Animals {
-  public Point origin;
   float xpos, ypos, theta;
   int direction = 0;
 

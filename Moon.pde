@@ -1,5 +1,4 @@
 public class Moon implements Celestial_Bodies {
-  public Point origin;
   float xpos, ypos, s, theta;
   color c;
 
