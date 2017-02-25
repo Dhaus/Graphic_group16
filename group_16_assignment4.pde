@@ -1,14 +1,24 @@
+import java.util.Map;
 Sun the_sun;
 Moon the_moon;
-int s, r, g, b;
+Map<String, Star> map;
+int s, r, g, b, starAmt, dayCycle;
+float x, y;
 void setup() { 
   noFill();
   size(800, 800);
+  starAmt = 500;
   the_sun = new Sun();
   the_moon = new Moon();
+  map = new HashMap<String, Star>();
+  for(int i = 0; i < starAmt; i++) {
+    x = random(50)*20;
+    y = random(35)*20;
+    map.put("s" + i, new Star(x, y));
+  }
   s = 0;
   r = 212;
-  g =230;
+  g = 230;
   b = 241;
 }
 
@@ -16,9 +26,11 @@ void setup() {
 
 void draw() {
   //sun 
-  noStroke();
+  if (the_sun.getYpos() > 400) {
+     dayCycle += 1; 
+  }
   daylightControl();
-  rect(0, 0, 800, 500);
+  generateStars();
   the_sun.display();
   the_sun.move();
   the_moon.display();
@@ -59,6 +71,7 @@ public void backdrop() {
 }
 
 public void daylightControl() {
+  noStroke();
   if (the_sun.getYpos() < 400) { //it's daytime
     fill(r,g,b);
     if (r < 212) { //
@@ -73,5 +86,15 @@ public void daylightControl() {
       b -= 1;
     }
     fill(r,g,b);
+  }
+  rect(0, 0, 800, 500); //sky
+}
+
+public void generateStars() {
+  if (the_sun.getYpos() > 500) { //nighttime 
+    for(int i = 0; i < starAmt; i++) {
+         Star s = map.get("s" + i);
+         s.display();
+    }
   }
 }
