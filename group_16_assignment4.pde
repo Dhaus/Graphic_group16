@@ -2,8 +2,8 @@ import java.util.Map;
 Sun the_sun;
 Moon the_moon;
 Shark the_shark;
+Fish the_fish;
 
-int s, r, g, b;
 Map<String, Star> map;
 int s, r, g, b, starAmt, dayCycle;
 float x, y;
@@ -14,6 +14,7 @@ void setup() {
   the_sun = new Sun();
   the_moon = new Moon();
   the_shark = new Shark();
+  the_fish = new Fish();
   map = new HashMap<String, Star>();
   for(int i = 0; i < starAmt; i++) {
     x = random(50)*20;
@@ -41,6 +42,7 @@ void draw() {
   the_moon.move();
   backdrop();
   the_shark.move();
+  the_fish.move();
 }
 
 public void backdrop() {
