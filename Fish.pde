@@ -1,39 +1,27 @@
 public class Fish implements Animals {
   public Point origin;
-  float xpos, ypos;
+  float xpos, ypos, theta;
   int direction = 0;
 
   public Fish() {
-    xpos = 100;
-    ypos = 500;
+    xpos = 800;
+    ypos = 580;
+    theta = 0.0;
   }
 
   void display() {
-    img = loadImage("shark.png");
+    img = loadImage("fish2.png");
     image(img, xpos, ypos);
   }
 
   void move() {
-    img = loadImage("shark.png");
-
-    //xpos = xpos + xstep;
-    //ypos = ypos + ystep;
-
-    if (xpos >= (width - 100)/2) {
-      direction = 1;
-    }
-
-    if (xpos == 50) {
-      direction = 0;
-    } 
-
-    if (direction==0) {
-      xpos = xpos + 2;
-      ypos--;
-    } else {
-      xpos = xpos - 2;
-      ypos++;
-    }
+    img = loadImage("fish2.png");
+    theta += 0.25;
+    xpos--;
+    ypos = ypos + cos(theta);
     image(img, xpos, ypos);
+    if (xpos == 0) {
+      xpos = 800;
+    }
   }
 }

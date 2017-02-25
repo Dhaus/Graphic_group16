@@ -1,4 +1,5 @@
 import java.util.Map;
+
 Sun the_sun;
 Moon the_moon;
 Shark the_shark;
@@ -16,7 +17,7 @@ void setup() {
   the_shark = new Shark();
   the_fish = new Fish();
   map = new HashMap<String, Star>();
-  for(int i = 0; i < starAmt; i++) {
+  for (int i = 0; i < starAmt; i++) {
     x = random(50)*20;
     y = random(35)*20;
     map.put("s" + i, new Star(x, y));
@@ -32,7 +33,7 @@ void setup() {
 void draw() {
   //sun 
   if (the_sun.getYpos() > 400) {
-     dayCycle += 1; 
+    dayCycle += 1;
   }
   daylightControl();
   generateStars();
@@ -97,9 +98,9 @@ public void daylightControl() {
 
 public void generateStars() {
   if (the_sun.getYpos() > 500) { //nighttime 
-    for(int i = 0; i < starAmt; i++) {
-         Star s = map.get("s" + i);
-         s.display();
+    for (int i = 0; i < starAmt; i++) {
+      Star s = map.get("s" + i);
+      s.display();
     }
   }
 }
