@@ -39,5 +39,4 @@ public class Sun implements Celestial_Bodies {
     return ypos;
   }
   
-  
 }
