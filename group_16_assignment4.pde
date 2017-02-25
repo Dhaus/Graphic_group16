@@ -1,26 +1,29 @@
 Sun the_sun;
 Moon the_moon;
+int s, r, g, b;
 void setup() { 
   noFill();
   size(800, 800);
   the_sun = new Sun();
   the_moon = new Moon();
+  s = 0;
+  r = 212;
+  g =230;
+  b = 241;
 }
 
 //comment
 
 void draw() {
-  //sky
-  fill(212, 230, 241); //light blue
-  noStroke();
-  rect(0, 0, 800, 500);
   //sun 
+  noStroke();
+  daylightControl();
+  rect(0, 0, 800, 500);
   the_sun.display();
   the_sun.move();
   the_moon.display();
   the_moon.move();
   backdrop();
-  
   
 }
 
@@ -53,4 +56,22 @@ public void backdrop() {
   bezier(550, 280, 550, 250, 620, 240, 640, 260);
   bezier(550, 280, 550, 250, 640, 300, 635, 310);
 
+}
+
+public void daylightControl() {
+  if (the_sun.getYpos() < 400) { //it's daytime
+    fill(r,g,b);
+    if (r < 212) { //
+      r += 1;
+      g += 1;
+      b += 1;
+    }
+  } else { //it's nighttime
+    if (r != 0) { //fade to black
+      r -= 1;
+      g -= 1;
+      b -= 1;
+    }
+    fill(r,g,b);
+  }
 }

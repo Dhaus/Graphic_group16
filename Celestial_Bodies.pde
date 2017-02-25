@@ -1,3 +1,5 @@
 public interface Celestial_Bodies {
-  public color getColor();
+  color getColor();
+  void display();
+  void move();
 }

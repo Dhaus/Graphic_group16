@@ -5,7 +5,7 @@ public class Sun implements Celestial_Bodies {
 
   public Sun() {
     xpos = 0;
-    ypos = 400;
+    ypos = 450;
     c = getColor();
     theta = 0.0;
   }
@@ -24,7 +24,7 @@ public class Sun implements Celestial_Bodies {
   
   //updates the x, y values and adjusts bightness of the scene
   public void move() {
-      theta += 0.00235;
+      theta += 0.0025;
       xpos = xpos + sin(theta);
       ypos = ypos - cos(theta);
   }
@@ -34,4 +34,10 @@ public class Sun implements Celestial_Bodies {
     c = color(245, 176, 65); //yellow
     return c;
   }
+  
+  public float getYpos() {
+    return ypos;
+  }
+  
+  
 }
