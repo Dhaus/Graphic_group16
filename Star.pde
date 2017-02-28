@@ -13,6 +13,11 @@ public class Star implements Celestial_Bodies {
     ellipse(xpos, ypos, 10, 10);
   }
   
+  void twinkle() {
+    
+    
+  }
+  
   
   @Override
   public color getColor() {

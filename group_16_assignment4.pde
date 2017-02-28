@@ -12,6 +12,7 @@ void setup() {
   noFill();
   size(800, 800);
   starAmt = 500;
+  dayCycle = 0;
   the_sun = new Sun();
   the_moon = new Moon();
   the_shark = new Shark();
@@ -42,7 +43,9 @@ void draw() {
   the_moon.display();
   the_moon.move();
   backdrop();
+  the_shark.display();
   the_shark.move();
+  the_fish.display();
   the_fish.move();
 }
 
