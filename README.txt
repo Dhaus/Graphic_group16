@@ -1,0 +1,1 @@
+open the group_16_assignment4.pde and hit play. The animation should show all aspects within 30 seconds.
